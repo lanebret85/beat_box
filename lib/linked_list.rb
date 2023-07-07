@@ -4,5 +4,13 @@ class LinkedList
     def initialize
         @list = list
     end
+
+    def head
+        @data
+    end
+
+    def append(data)
+        @head = Node.new(data)
+    end
     
 end
