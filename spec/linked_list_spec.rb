@@ -29,6 +29,20 @@ RSpec.describe LinkedList do
         end
     end
 
+    describe "#count" do
+        it "should count the number of nodes in the list" do
+            list = LinkedList.new
 
+            expect(list.count).to eq(1)
+        end
+    end
+
+    describe "#to_string" do
+        it "should return a string of all elements in list" do
+            list = LinkedList.new
+
+            expect(list.to_string).to eq("doop")
+        end
+    end
 
 end
