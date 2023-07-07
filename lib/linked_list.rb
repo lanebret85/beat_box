@@ -3,7 +3,6 @@ class LinkedList
 
     def initialize
         @head = nil
-        @current_node = nil
     end
 
     def append(data)
@@ -13,15 +12,29 @@ class LinkedList
             @head = new_node
         else
             #might need loop here (*until* sort of thing)
-            @current_node = @head
+            current_node = @head
         end
     end
 
     def count
+        current_node = @head
         counter = 0
-        while @current_node.next_node != nil
+        while current_node != nil
+            current_node = current_node.next_node
             counter += 1
-        end 
+        end
+        counter
     end
-    
+    # require 'pry';binding.pry
+
+    def to_string
+        list_as_string = ""
+        current_node = @head
+        while current_node != nil
+            list_as_string = list_as_string + "#{current_node.data}"
+            current_node = current_node.next_node
+        end
+        list_as_string
+    end
+
 end
