@@ -22,27 +22,33 @@ RSpec.describe LinkedList do
     describe "#append" do
         it "should append new data into the list" do
             list = LinkedList.new
-            @data = "doop"
+            list.append("doop")
+            list.append("deep")
 
-            expect(list.append("doop")).to eq(list)
+            expect(list).to be_a(LinkedList)
             expect(list.head.data).to eq("doop")
-            expect(list.head.next_node).to eq(nil)
+            expect(list.head.next_node.data).to eq("deep")
+            expect(list.head.next_node.next_node).to eq(nil)
         end
     end
 
     describe "#count" do
-        xit "should count the number of nodes in the list" do
+        it "should count the number of nodes in the list" do
             list = LinkedList.new
+            list.append("doop")
+            list.append("deep")
 
-            expect(list.count).to eq(1)
+            expect(list.count).to eq(2)
         end
     end
 
     describe "#to_string" do
-        xit "should return a string of all elements in list" do
+        it "should return a string of all elements in list" do
             list = LinkedList.new
+            list.append("doop")
+            list.append("deep")
 
-            expect(list.to_string).to eq("doop")
+            expect(list.to_string).to eq("doop deep")
         end
     end
 

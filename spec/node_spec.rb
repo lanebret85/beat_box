@@ -11,7 +11,7 @@ RSpec.describe Node do
             expect(node.data).to eq("plop")
         end
     end
-
+    
     describe "#next_node" do
         it "should return first value from next node" do
             node = Node.new("plop")
