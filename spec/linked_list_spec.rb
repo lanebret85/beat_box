@@ -52,4 +52,19 @@ RSpec.describe LinkedList do
         end
     end
 
+    describe "#prepend" do
+        it "should add nodes to the beginning of the list" do
+            list = LinkedList.new
+            list.append("plop")
+            expect(list.to_string).to eq("plop")
+            
+            list.append("suu")
+            expect(list.to_string).to eq("plop suu")
+
+            list.prepend("dop")
+            expect(list.to_string).to eq("dop plop suu")
+            expect(list.count).to eq(3)
+        end
+    end
+
 end
