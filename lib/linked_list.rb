@@ -47,4 +47,16 @@ class LinkedList
         list_as_string
     end
 
+    def prepend(data)
+        new_node = Node.new(data)
+
+        if @head.nil?
+            @head = new_node
+        else
+            current_head = new_node
+            current_head.next_node = @head
+            @head =  current_head
+        end
+    end
+
 end
