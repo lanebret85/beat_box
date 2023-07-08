@@ -59,4 +59,15 @@ class LinkedList
         end
     end
 
+    def insert(index, data)
+        new_node = Node.new(data)
+        index = 0
+
+        if index == 0
+            @head = new_node
+        else
+            #need to find a way to get to index input
+            #and insert new node there
+        end
+    end
 end
