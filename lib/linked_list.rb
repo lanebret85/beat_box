@@ -11,9 +11,15 @@ class LinkedList
         if @head.nil?
             @head = new_node
         else
-            #might need loop here (*until* sort of thing)
             current_node = @head
+
+            while current_node.next_node != nil
+                current_node = current_node.next_node
+            end
+            
+            current_node.next_node = new_node
         end
+
     end
 
     def count
@@ -25,15 +31,19 @@ class LinkedList
         end
         counter
     end
-    # require 'pry';binding.pry
 
     def to_string
         list_as_string = ""
         current_node = @head
+
         while current_node != nil
-            list_as_string = list_as_string + "#{current_node.data}"
+            list_as_string << current_node.data
+            if current_node.next_node != nil
+                list_as_string << " "
+            end
             current_node = current_node.next_node
         end
+
         list_as_string
     end
 
