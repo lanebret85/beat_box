@@ -20,4 +20,14 @@ RSpec.describe LinkedList do
         end
     end
 
+    describe "#append" do
+        it "should add a new node to the list for each piece of data" do
+            bb = BeatBox.new
+            bb.append("deep doo ditt")
+
+            expect(list.head.data).to eq("deep")
+            expect(list.head.next_node.data).to eq("doo")
+        end
+    end
+
 end
