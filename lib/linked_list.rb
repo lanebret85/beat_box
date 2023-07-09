@@ -1,5 +1,5 @@
 class LinkedList
-    attr_reader :head
+    attr_accessor :head
 
     def initialize
         @head = nil
@@ -61,13 +61,21 @@ class LinkedList
 
     def insert(index, data)
         new_node = Node.new(data)
-        index = 0
+        current_node = @head
 
         if index == 0
             @head = new_node
+
+            new_node.next_node = current_node
+            current_node = new_node
+
         else
-            #need to find a way to get to index input
-            #and insert new node there
+            (index - 1).times do
+                current_node = current_node.next_node
+            end
+
+            new_node.next_node = current_node.next_node
+            current_node.next_node = new_node
         end
     end
 end
