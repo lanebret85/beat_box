@@ -112,4 +112,17 @@ class LinkedList
         
         found.strip
     end
+
+    def includes?(data)
+        current_node = @head
+        until current_node.next_node.nil? || current_node.data == data
+            current_node = current_node.next_node
+        end
+
+        if current_node.data == data
+            true
+        else
+            false
+        end
+    end
 end
