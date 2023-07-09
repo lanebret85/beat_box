@@ -95,15 +95,30 @@ RSpec.describe LinkedList do
     describe "#find" do
         it "should find and return some amount of data starting at some index" do
             list = LinkedList.new
-            list.append("plop")
+            list.append("deep")
             list.append("woo")
             list.append("shi")
             list.append("shu")
             list.append("blop")
 
-            expect(list.to_string).to eq("plop woo shi shu blop")
+            expect(list.to_string).to eq("deep woo shi shu blop")
             expect(list.find(2,1)).to eq("shi")
             expect(list.find(1,3)).to eq("woo shi shu")
+        end
+    end
+
+    describe "#includes?" do
+        it "should return true if the value is in the list and false if not" do
+            list = LinkedList.new
+            list.append("deep")
+            list.append("woo")
+            list.append("shi")
+            list.append("shu")
+            list.append("blop")
+
+            expect(list.to_string).to eq("deep woo shi shu blop")
+            expect(list.includes?("deep")).to eq(true)
+            expect(list.includes?("dep")).to eq(false)
         end
     end
 
