@@ -69,6 +69,18 @@ class LinkedList
             new_node.next_node = current_node
             current_node = new_node
 
+            # want to come back to this:
+            # trying to account for insert at too high of an index
+        # elsif index + 1 > list.count
+        #     index = (list.count - 1)
+
+        #     (index - 1).times do
+        #         current_node = current_node.next_node
+        #     end
+
+        #     new_node.next_node = current_node.next_node
+        #     current_node.next_node = new_node            
+
         else
             (index - 1).times do
                 current_node = current_node.next_node
@@ -77,5 +89,27 @@ class LinkedList
             new_node.next_node = current_node.next_node
             current_node.next_node = new_node
         end
+    end
+
+    def find(index, elements)
+        found = ""
+        counter = 0
+
+        current_node = @head
+        while counter < index || current_node.nil?
+            current_node = current_node.next_node
+            counter += 1
+        end
+
+        until counter == index + elements
+            found << current_node.data
+            if current_node.next_node != nil
+                found << " "
+            end
+            current_node = current_node.next_node
+            counter += 1
+        end
+        
+        found.strip
     end
 end
