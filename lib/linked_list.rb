@@ -125,4 +125,18 @@ class LinkedList
             false
         end
     end
+
+    def pop
+        popped = ""
+        current_node = @head
+
+        until current_node.next_node.next_node.nil?
+            current_node = current_node.next_node
+        end
+
+        last_node = current_node.next_node
+        popped << last_node.data
+        current_node.next_node = nil
+        popped
+    end
 end
