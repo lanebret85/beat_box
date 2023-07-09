@@ -85,6 +85,25 @@ RSpec.describe LinkedList do
 
             list.insert(0, "bap")
             expect(list.to_string).to eq("bap dop woo plop suu")
+
+            # want to come back to this and test for cases of too high of an index
+            # list.insert(10, "oop")
+            # expect(list.to_string).to eq("bap dop woo plop suu oop")
+        end
+    end
+
+    describe "#find" do
+        it "should find and return some amount of data starting at some index" do
+            list = LinkedList.new
+            list.append("plop")
+            list.append("woo")
+            list.append("shi")
+            list.append("shu")
+            list.append("blop")
+
+            expect(list.to_string).to eq("plop woo shi shu blop")
+            expect(list.find(2,1)).to eq("shi")
+            expect(list.find(1,3)).to eq("woo shi shu")
         end
     end
 
