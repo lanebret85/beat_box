@@ -12,4 +12,12 @@ RSpec.describe LinkedList do
         end
     end
 
+    describe "#head" do
+        it "should have a head node" do
+            bb = BeatBox.new
+
+            expect(bb.list.head).to eq(nil)
+        end
+    end
+
 end
