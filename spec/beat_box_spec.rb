@@ -49,4 +49,18 @@ RSpec.describe LinkedList do
         end
     end
 
+    describe "#all" do
+        it "should return only beats in the validation list" do
+            bb = BeatBox.new
+            bb.append("deep")
+            
+            bb.append("Mississippi")
+            require 'pry';binding.pry
+            expect(bb.all).to eq("deep")
+            
+            bb.prepend("tee tee tee Mississippi")
+            expect(bb.all).to eq("tee tee tee deep")
+        end
+    end
+
 end
