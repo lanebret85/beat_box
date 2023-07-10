@@ -40,4 +40,13 @@ RSpec.describe LinkedList do
         end
     end
 
+    describe "#play" do
+        xit "should play the beats" do
+            bb = BeatBox.new
+            bb.append("deep doo ditt woo hoo shu")
+
+            
+        end
+    end
+
 end
