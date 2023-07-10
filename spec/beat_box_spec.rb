@@ -25,8 +25,8 @@ RSpec.describe LinkedList do
             bb = BeatBox.new
             bb.append("deep doo ditt")
 
-            expect(list.head.data).to eq("deep")
-            expect(list.head.next_node.data).to eq("doo")
+            expect(bb.list.head.data).to eq("deep")
+            expect(bb.list.head.next_node.data).to eq("doo")
         end
     end
 
