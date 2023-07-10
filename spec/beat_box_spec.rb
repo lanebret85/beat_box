@@ -30,4 +30,14 @@ RSpec.describe LinkedList do
         end
     end
 
+    describe "#count" do
+        it "should count the numner of nodes in the list" do
+            bb = BeatBox.new
+            bb.append("deep doo ditt")
+            bb.append("woo hoo shu")
+
+            expect(bb.count).to eq(6)
+        end
+    end
+
 end
