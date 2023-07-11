@@ -41,19 +41,17 @@ RSpec.describe LinkedList do
     end
 
     describe "#play" do
-        xit "should play the beats" do
+        it "should play the beats" do
             bb = BeatBox.new
             bb.append("deep doo ditt woo hoo shu")
-
-            
         end
     end
-
+    
     describe "#all" do
-        it "should return only beats in the validation list" do
+    it "should return only beats in the validation list" do
             bb = BeatBox.new
             bb.append("deep")
-            
+        
             bb.append("Mississippi")
             expect(bb.all).to eq("deep")
             
@@ -73,17 +71,17 @@ RSpec.describe LinkedList do
     end
 
     describe "#voice" do
-        xit "should be able to change voice" do
+        it "should be able to change voice" do
             bb = BeatBox.new
             bb.append("deep dop dop deep")
             bb.voice = "Daniel"
-
+            
             expect(bb.voice).to eq("Daniel")
         end
     end
 
     describe "#reset_rate" do
-        xit "should reset the rate to 500" do
+        it "should reset the rate to 500" do
             bb = BeatBox.new
             bb.append("deep dop dop deep")
             bb.rate = 100
@@ -94,13 +92,13 @@ RSpec.describe LinkedList do
     end
 
     describe "#reset_voice" do
-        xit "should reset the voice to Boing" do
+        it "should reset the voice to Boing" do
             bb = BeatBox.new
             bb.append("deep dop dop deep")
             bb.voice = "Daniel"
             bb.reset_voice
 
-            exepect(bb.reset_voice).to eq("Boing")
+            expect(bb.reset_voice).to eq("Boing")
         end
     end
 
