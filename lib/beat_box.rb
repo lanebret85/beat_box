@@ -1,16 +1,19 @@
 # require_relative "./linked_list"
 
 class BeatBox
-    attr_accessor :list
+    attr_accessor :list, :valid_beats
 
     def initialize(list = LinkedList.new)
         @list = list
+        @valid_beats = ["tee", "dee", "deep", "bop", "boop", "la", "na", "doo", "ditt", "woo", "hoo", "shu"]
     end
 
     def append(data)
         split_data = data.split(" ")
         split_data.each do |data|
-            @list.append(data)
+            if @valid_beats.include?(data)
+                @list.append(data)
+            end
         end
     end
 
@@ -23,21 +26,17 @@ class BeatBox
         `say -r 200 -v Karen #{beats}`
     end
 
-    # refactor to make valid_beats an attribute and then filter out
-    # for not okay inputs in append method, prepend method, etc.
-    # look at "any" loop/method
     def all
-        valid_beats = ["tee", "dee", "deep", "bop", "boop", "la", "na"]
+        @list.to_string
+    end
 
-        beats = @list.to_string
-
-        valid_beats.each do |beat|
-            if beats.include?(beat) == false
-                beats.delete(beat)
+    def prepend(data)
+        split_data = data.split(" ")
+        split_data.each do |data|
+            if @valid_beats.include?(data)
+                @list.prepend(data)
             end
         end
-
-        beats
     end
 
 end

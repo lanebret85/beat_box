@@ -55,7 +55,6 @@ RSpec.describe LinkedList do
             bb.append("deep")
             
             bb.append("Mississippi")
-            require 'pry';binding.pry
             expect(bb.all).to eq("deep")
             
             bb.prepend("tee tee tee Mississippi")
