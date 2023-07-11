@@ -4,7 +4,7 @@ class BeatBox
     attr_accessor :list, :valid_beats
 
     def initialize(list = LinkedList.new)
-        @list = list
+        @list = LinkedList.new
         @valid_beats = ["tee", "dee", "deep", "bop", "boop", "la", "na", "doo", "ditt", "woo", "hoo", "shu"]
     end
 
@@ -23,7 +23,7 @@ class BeatBox
 
     def play
         beats = @list.to_string
-        `say -r 200 -v Karen #{beats}`
+        `say -r 500 -v Boing #{beats}`
     end
 
     def all

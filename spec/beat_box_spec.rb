@@ -62,4 +62,46 @@ RSpec.describe LinkedList do
         end
     end
 
+    describe "#rate" do
+        it "should return the speed of the voice" do
+            bb = BeatBox.new
+            bb.append("deep dop dop deep")
+            bb.rate = 100
+
+            expect(bb.rate).to eq(100)
+        end
+    end
+
+    describe "#voice" do
+        it "should be able to change voice" doo
+            bb = BeatBox.new
+            bb.append("deep dop dop deep")
+            bb.voice = "Daniel"
+
+            expect(bb.voice).to eq("Daniel")
+        end
+    end
+
+    describe "#reset_rate" do
+        it "should reset the rate to 500" do
+            bb = BeatBox.new
+            bb.append("deep dop dop deep")
+            bb.rate = 100
+            bb.reset_rate
+
+            expect(bb.reset_rate).to eq(500)
+        end
+    end
+
+    describe "#reset_voice" do
+        it "should reset the voice to Boing" do
+            bb = BeatBox.new
+            bb.append("deep dop dop deep")
+            bb.voice = "Daniel"
+            bb.reset_voice
+
+            exepect(bb.reset_voice).to eq("Boing")
+        end
+    end
+
 end
