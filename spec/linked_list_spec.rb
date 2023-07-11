@@ -86,7 +86,6 @@ RSpec.describe LinkedList do
             list.insert(0, "bap")
             expect(list.to_string).to eq("bap dop woo plop suu")
             
-            # want to come back to this and test for cases of too high of an index
             list.insert(10, "oop")
             expect(list.to_string).to eq("bap dop woo plop suu oop")
         end
