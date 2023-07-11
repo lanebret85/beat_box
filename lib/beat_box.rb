@@ -1,13 +1,11 @@
-# require_relative "./linked_list"
-
 class BeatBox
-    attr_accessor :list, :valid_beats
+    attr_accessor :list, :valid_beats, :rate, :voice
 
-    def initialize(list = LinkedList.new)
+    def initialize
         @list = LinkedList.new
-        @valid_beats = ["tee", "dee", "deep", "bop", "boop", "la", "na", "doo", "ditt", "woo", "hoo", "shu"]
-        # @rate = 500
-        # @voice = "Boing"
+        @valid_beats = ["tee", "dee", "deep", "bop", "boop", "la", "na", "doo", "ditt", "woo", "hoo", "shu", "baa"]
+        @rate = 500
+        @voice = "Boing"
     end
 
     def append(data)
@@ -25,7 +23,7 @@ class BeatBox
 
     def play
         beats = @list.to_string
-        `say -r 500 -v Boing #{beats}`
+        `say -r #{@rate} -v #{@voice} #{beats}`
     end
 
     def all
@@ -41,9 +39,12 @@ class BeatBox
         end
     end
 
-    def rate=(x)
-        # beats = @list.to_string
-        # `say -r #{rate} -v Boing #{beats}`
+    def reset_rate
+        @rate = 500
     end
 
+    def reset_voice
+        @voice = "Boing"
+    end
+    
 end
