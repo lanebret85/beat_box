@@ -52,4 +52,89 @@ RSpec.describe LinkedList do
         end
     end
 
+    describe "#prepend" do
+        it "should add nodes to the beginning of the list" do
+            list = LinkedList.new
+            list.append("plop")
+            expect(list.to_string).to eq("plop")
+            
+            list.append("suu")
+            expect(list.to_string).to eq("plop suu")
+
+            list.prepend("dop")
+            expect(list.to_string).to eq("dop plop suu")
+            expect(list.count).to eq(3)
+        end
+    end
+
+    describe "#insert" do
+        it "should add nodes at a given position in the list" do
+            list = LinkedList.new
+            list.append("plop")
+            expect(list.to_string).to eq("plop")
+            
+            list.append("suu")
+            expect(list.to_string).to eq("plop suu")
+
+            list.prepend("dop")
+            expect(list.to_string).to eq("dop plop suu")
+            expect(list.count).to eq(3)
+
+            list.insert(1, "woo")
+            expect(list.to_string).to eq("dop woo plop suu")
+
+            list.insert(0, "bap")
+            expect(list.to_string).to eq("bap dop woo plop suu")
+
+            # want to come back to this and test for cases of too high of an index
+            # list.insert(10, "oop")
+            # expect(list.to_string).to eq("bap dop woo plop suu oop")
+        end
+    end
+
+    describe "#find" do
+        it "should find and return some amount of data starting at some index" do
+            list = LinkedList.new
+            list.append("deep")
+            list.append("woo")
+            list.append("shi")
+            list.append("shu")
+            list.append("blop")
+
+            expect(list.to_string).to eq("deep woo shi shu blop")
+            expect(list.find(2,1)).to eq("shi")
+            expect(list.find(1,3)).to eq("woo shi shu")
+        end
+    end
+
+    describe "#includes?" do
+        it "should return true if the value is in the list and false if not" do
+            list = LinkedList.new
+            list.append("deep")
+            list.append("woo")
+            list.append("shi")
+            list.append("shu")
+            list.append("blop")
+
+            expect(list.to_string).to eq("deep woo shi shu blop")
+            expect(list.includes?("deep")).to eq(true)
+            expect(list.includes?("dep")).to eq(false)
+        end
+    end
+
+    describe "#pop" do
+        it "should remove the last piece of data from the list and return it" do
+            list = LinkedList.new
+            list.append("deep")
+            list.append("woo")
+            list.append("shi")
+            list.append("shu")
+            list.append("blop")
+
+            expect(list.to_string).to eq("deep woo shi shu blop")
+            expect(list.pop).to eq("blop")
+            expect(list.pop).to eq("shu")
+        end
+    end
+
 end
