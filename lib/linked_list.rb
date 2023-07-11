@@ -19,7 +19,6 @@ class LinkedList
             
             current_node.next_node = new_node
         end
-
     end
 
     def count
@@ -29,6 +28,7 @@ class LinkedList
             current_node = current_node.next_node
             counter += 1
         end
+
         counter
     end
 
@@ -77,44 +77,9 @@ class LinkedList
                 counter += 1
             end
 
-            if current_node.next_node.nil?
-                # what if I could create an empty array
-                # that was appended with "next_nodes"
-                # and I used that array to input the same
-                # number of "next_nodes" behind @head
-                # as my counter
-
-                # current_node = current_node.next_node.next_node
-                # current_node = @head.next_node.something
-                new_node.next_node = current_node.next_node
-                current_node.next_node = new_node
-            else
-                new_node.next_node = current_node.next_node
-                current_node.next_node = new_node
-            end
+            new_node.next_node = current_node.next_node
+            current_node.next_node = new_node
         end
-    
-        require 'pry';binding.pry
-
-        # elsif index + 1 > list.count
-        #     index = (list.count - 1)
-
-        #     (index - 1).times do
-        #         current_node = current_node.next_node
-        #     end
-
-        #     new_node.next_node = current_node.next_node
-        #     current_node.next_node = new_node            
-
-
-        # else
-        #     (index - 1).times do
-        #         current_node = current_node.next_node
-        #     end
-
-        #     new_node.next_node = current_node.next_node
-        #     current_node.next_node = new_node
-        # end
     end
 
     def find(index, elements)
