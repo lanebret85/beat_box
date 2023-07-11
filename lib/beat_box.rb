@@ -6,6 +6,8 @@ class BeatBox
     def initialize(list = LinkedList.new)
         @list = LinkedList.new
         @valid_beats = ["tee", "dee", "deep", "bop", "boop", "la", "na", "doo", "ditt", "woo", "hoo", "shu"]
+        # @rate = 500
+        # @voice = "Boing"
     end
 
     def append(data)
@@ -37,6 +39,11 @@ class BeatBox
                 @list.prepend(data)
             end
         end
+    end
+
+    def rate=(x)
+        # beats = @list.to_string
+        # `say -r #{rate} -v Boing #{beats}`
     end
 
 end
