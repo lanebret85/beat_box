@@ -1,7 +1,7 @@
 class BeatBox
     attr_accessor :list, :valid_beats, :rate, :voice
 
-    def initialize
+    def initialize(list = LinkedList.new)
         @list = LinkedList.new
         @valid_beats = ["tee", "dee", "deep", "bop", "boop", "la", "na", "doo", "ditt", "woo", "hoo", "shu", "baa"]
         @rate = 500
